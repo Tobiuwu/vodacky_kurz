@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadata -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Links -->
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/form.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a4b16492f8.js" crossorigin="anonymous"></script>
+
+  <title>File Write</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form_vodacka">
+      <!-- Multi step form -->
+      <section class="multi_step_form">
+        <form id="form_apply" enctype="multipart/form-data" autocomplete="off">
+          <!-- Title -->
+          <div class="title">
+            <h2>Formulář pro vodácký kurz</h2>
+            <p>Přihlašte se k nám</p>
+          </div>
+          <!-- progressbar -->
+          <ul id="progressbar">
+            <li class="active">Přezdívka</li>
+            <li>Dokáže plavat?</li>
+            <li>Kamarád na loď</li>
+            <li>Odeslat/zrušit</li>
+          </ul>
+          <!-- fieldsets -->
+          <fieldset>
+            <h3>Přezdívka</h3>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input id="nick" type="text" name="nick" class="form-control form-input" placeholder="Váš nick"
+                  oninput="validateName(this, '#nick_continue')">
+                <div id="name_error" class="error_message hidden">
+                  <i class="fa fa-warning"></i>
+                  Špatně zadané jméno, zkuste znovu.
+                </div>
+                <div id="duplicate_error" class="error_message hidden">
+                  <i class="fa fa-warning"></i>
+                   Jméno je už zaregistrované.
+                </div>
+                <br>
+                <input id="birthdate" type="date" name="birthdate" class="form-control form-input" min='1899-01-01'
+                  max='9999-12-31' oninput="validateDate(this, '#nick_continue')">
+                <div id="birthdate_error" class="error_message hidden">
+                  <i class="fa fa-warning"></i>
+                  Nezadali jste validní datum narození.
+                </div>
+              </div>
+            </div>
+            <hr>
+            <button type="button" class="action-button previous_button return_homepage">Zpět</button>
+            <button id="nick_continue" type="button" class="next action-button disabled">Dále</button>
+          </fieldset>
+
+          <fieldset>
+            <h3>Dokážete plavat?</h3>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input id="is_swimmer" type="checkbox" name="is_swimmer">
+              </div>
+            </div>
+            <hr>
+            <button type="button" class="action-button previous previous_button">Zpět</button>
+            <button id="swim_button" type="button" class="next action-button">Dále</button>
+          </fieldset>
+
+          <fieldset>
+            <h3>Kamarád na loď</h3>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input id="canoe_kamarad" type="text" name="canoe_kamarad" class="form-control form-input"
+                  placeholder="Napište jméno kamaráda" oninput="validateName(this, '#canoe_button', true)">
+                <div id="name_error" class="error_message hidden">
+                  <i class="fa fa-warning"></i>
+                  Špatně zadané jméno kamaráda, zkuste znovu.
+                </div>
+              </div>
+            </div>
+            <hr>
+            <button type="button" class="action-button previous previous_button">Zpět</button>
+            <button id="canoe_button" type="button" class="next action-button">Dále</button>
+          </fieldset>
+
+          <fieldset>
+            <button type="button" class="action-button previous previous_button">Zpět</button>
+            <button type="button" id="submit_form" name="apply_final" class="next action-button">Odeslat</button>
+          </fieldset>
+          <fieldset id="result"></fieldset>
+        </form>
+      </section>
+      <!-- End Multi step form -->
+    </div>
+  </div>
+  </section>
+  <!-- End form -->
+  </div>
+  </div>
+  </div>
+  </section>
+  <!-- Icons (FontsAwesome) -->
+  <!-- Icons (FontsAwesome) -->
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+  <!-- Modal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7"></script>
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+
+</html>

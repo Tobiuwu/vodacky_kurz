@@ -1,0 +1,53 @@
+\hypertarget{upload_8php_source}{}\doxysection{upload.\+php}
+\label{upload_8php_source}\index{C:/xampp/htdocs/awwawaform/database/upload.php@{C:/xampp/htdocs/awwawaform/database/upload.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00003}00003 \textcolor{keywordflow}{if} (!empty(\$\_POST[\textcolor{stringliteral}{'apply'}])) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00004}00004     require\_once(\textcolor{stringliteral}{'authenticate.class.php'});}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00005}00005     \$DB = \textcolor{keyword}{new} \mbox{\hyperlink{class_authenticate}{Authenticate}}();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00006}00006     \textcolor{comment}{//set variables}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00007}00007     \$nick = trim(strip\_tags(\$\_POST[\textcolor{stringliteral}{'nick'}]));}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00008}00008     \$birthdate = trim(strip\_tags(\$\_POST[\textcolor{stringliteral}{'birthdate'}]));}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00009}00009     \$is\_swimmer = trim(strip\_tags(\$\_POST[\textcolor{stringliteral}{'is\_swimmer'}]));}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00010}00010     \$canoe\_kamarad = trim(strip\_tags(\$\_POST[\textcolor{stringliteral}{'canoe\_kamarad'}]));}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00012}00012     \textcolor{comment}{// test for null/empty inputs, which can't exist}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00013}00013     \$FormData = array(\$nick, \$birthdate, \$is\_swimmer);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00014}00014     \textcolor{comment}{// Test for empty inputs}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00015}00015     \textcolor{keywordflow}{if} (\$DB-\/>IsEmpty(\$FormData)) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00016}00016         \textcolor{comment}{// exception}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00017}00017         http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00018}00018         die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00021}00021     \textcolor{keywordflow}{if} (!\$DB-\/>isSwimmerTrue(\$is\_swimmer)) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00022}00022         http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00023}00023         die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00024}00024     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\$canoe\_kamarad != \textcolor{stringliteral}{''}) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00025}00025         \textcolor{keywordflow}{if} (!\$DB-\/>isValidNick(\$canoe\_kamarad)) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00026}00026             http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00027}00027             die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00028}00028         \}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00029}00029     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\$DB-\/>isValidDate(\$birthdate)) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00030}00030         http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00031}00031         die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00032}00032     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\$DB-\/>isDuplicateOrInvalidNick(\$nick)) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00033}00033         http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00034}00034         die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00036}00036     \$DB-\/>type = \textcolor{stringliteral}{'CreateUser'};}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00037}00037     array\_push(\$FormData, \$canoe\_kamarad);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00038}00038     \$DB-\/>param = \$FormData;}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00040}00040     \textcolor{keywordflow}{if} (\$DB-\/>Insert()) \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00041}00041         http\_response\_code(200);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00042}00042         die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00043}00043     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00044}00044         http\_response\_code(500);}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00045}00045         die();}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{upload_8php_source_l00047}00047 \}}
+
+\end{DoxyCode}

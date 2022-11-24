@@ -1,0 +1,76 @@
+\hypertarget{fetch_8php_source}{}\doxysection{fetch.\+php}
+\label{fetch_8php_source}\index{C:/xampp/htdocs/awwawaform/api/fetch.php@{C:/xampp/htdocs/awwawaform/api/fetch.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00002}00002 ini\_set(\textcolor{stringliteral}{'display\_errors'}, 1);}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00004}00004 \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'registeredUsers'}])) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00005}00005     require\_once(\textcolor{stringliteral}{'../database/authenticate.class.php'});}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00006}00006     \$DB = \textcolor{keyword}{new} \mbox{\hyperlink{class_authenticate}{Authenticate}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00007}00007     \$DB-\/>type = \textcolor{stringliteral}{'GetUsers'};}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00008}00008     \$DB-\/>param = array();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00009}00009     \$result = \$DB-\/>Fetch();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00010}00010     \textcolor{keywordflow}{if} (\$result) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00011}00011         \$row = \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00012}00012         \$num\_user = 0;}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00013}00013         \textcolor{keywordflow}{foreach} (\$result as \$user) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00014}00014             \$num\_user++;}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00015}00015             \$row .= <<<HTML}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00016}00016             <tr>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00017}00017               <th scope=\textcolor{stringliteral}{"{}row"{}}>\$num\_user</th>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00018}00018               <td>\$user[name]</td>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00019}00019               <td>\$user[birthdate]</td>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00020}00020               <td>\$user[kanoe\_friend]</td>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00021}00021             </tr>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00022}00022 HTML;}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00023}00023         \}}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00024}00024         \$html = <<<HTML}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00025}00025           <table \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}table"{}}>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00026}00026           <thead>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00027}00027             <tr>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00028}00028               <th scope=\textcolor{stringliteral}{"{}col"{}}>\#</th>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00029}00029               <th scope=\textcolor{stringliteral}{"{}col"{}}>Nick</th>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00030}00030               <th scope=\textcolor{stringliteral}{"{}col"{}}>Rok narození</th>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00031}00031               <th scope=\textcolor{stringliteral}{"{}col"{}}>Kamarád na kánoj</th>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00032}00032             </tr>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00033}00033           </thead>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00034}00034           <tbody>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00035}00035             \$row }
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00036}00036           </tbody>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00037}00037         </table>}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00038}00038 HTML;}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00039}00039         echo \$html;}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00040}00040         die();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00041}00041     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00042}00042         http\_response\_code(500);}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00043}00043         die();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00046}00046 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'check\_nickname'}], \$\_GET[\textcolor{stringliteral}{'nick'}])) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00047}00047     require\_once(\textcolor{stringliteral}{'../database/authenticate.class.php'});}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00048}00048     \$nick = trim(strip\_tags(\$\_GET[\textcolor{stringliteral}{'nick'}]));}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00049}00049     \$DB = \textcolor{keyword}{new} \mbox{\hyperlink{class_authenticate}{Authenticate}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00050}00050     \textcolor{keywordflow}{if} (\$DB-\/>isDuplicateOrInvalidNick(\$nick)) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00051}00051         echo json\_encode(array(\textcolor{stringliteral}{"{}ErrorCode"{}} => \textcolor{stringliteral}{"{}10000"{}}, \textcolor{stringliteral}{'Message'} => \textcolor{stringliteral}{'Uzivatel uz existuje.'}));}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00052}00052         http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00053}00053         die();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00055}00055 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'getWebhook'}], \$\_GET[\textcolor{stringliteral}{'id'}])) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00056}00056     require\_once(\textcolor{stringliteral}{'../database/authenticate.class.php'});}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00057}00057     \$DB = \textcolor{keyword}{new} \mbox{\hyperlink{class_authenticate}{Authenticate}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00058}00058     \$DB-\/>type = \textcolor{stringliteral}{"{}GetWebhook"{}};}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00059}00059     \$DB-\/>param = array(trim(strip\_tags(\$\_GET[\textcolor{stringliteral}{'id'}]))) ;}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00060}00060     \$result = \$DB-\/>Fetch();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00062}00062     \textcolor{keywordflow}{if}(\$result) \{}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00063}00063         echo json\_encode(array(\textcolor{stringliteral}{"{}webhookLink"{}}=>\$result[0][\textcolor{stringliteral}{'webhookLink'}]));}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00064}00064         die();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00065}00065     \} \textcolor{keywordflow}{else} \{ }
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00066}00066         http\_response\_code(400);}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00067}00067         die();}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{fetch_8php_source_l00070}00070 ?>}
+
+\end{DoxyCode}

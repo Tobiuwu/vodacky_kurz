@@ -1,0 +1,95 @@
+\hypertarget{connection_8class_8php_source}{}\doxysection{connection.\+class.\+php}
+\label{connection_8class_8php_source}\index{C:/xampp/htdocs/awwawaform/database/connection.class.php@{C:/xampp/htdocs/awwawaform/database/connection.class.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00007}\mbox{\hyperlink{class_connection}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{class_connection}{Connection}}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00009}00009     \textcolor{keyword}{private} \$data = array();}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00011}\mbox{\hyperlink{class_connection_a5766efd703cef0e00bfc06b3f3acbe0e}{00011}}     \textcolor{keyword}{protected} \mbox{\hyperlink{class_connection_a5766efd703cef0e00bfc06b3f3acbe0e}{\$pdo}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00012}00012     \textcolor{comment}{// Function that sets object values}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00013}00013     \textcolor{keyword}{public} \textcolor{keyword}{function} \_\_set(\$name, \$value)}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00015}00015         \$this-\/>data[\$name] = \$value;}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00016}00016     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00017}00017     \textcolor{comment}{// returns requested object and its contents}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00018}00018     \textcolor{keyword}{public} \textcolor{keyword}{function} \_\_get(\$name)}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00019}00019     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00020}00020         \textcolor{keywordflow}{if} (array\_key\_exists(\$name, \$this-\/>data)) \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00021}00021             \textcolor{keywordflow}{return} \$this-\/>data[\$name];}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00022}00022         \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00023}00023         \textcolor{comment}{// Exception handling}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00024}00024         \$trace = debug\_backtrace();}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00025}00025         trigger\_error(}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00026}00026             \textcolor{stringliteral}{'Undefined property via \_\_get(): '} . \$name .}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00027}00027             \textcolor{stringliteral}{' in '} . \$trace[0][\textcolor{stringliteral}{'file'}] .}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00028}00028             \textcolor{stringliteral}{' on line '} . \$trace[0][\textcolor{stringliteral}{'line'}],}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00029}00029             E\_USER\_NOTICE}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00030}00030         );}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00031}00031         \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00034}\mbox{\hyperlink{class_connection_a6e7560ad95a7986be67f7528c80e7f1a}{00034}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_connection_a6e7560ad95a7986be67f7528c80e7f1a}{getPdo}}()}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00035}00035     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00036}00036         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_connection_a5766efd703cef0e00bfc06b3f3acbe0e}{\$this-\/>pdo}};}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00039}\mbox{\hyperlink{class_connection_a39c9cbfd5b6472d99e5b19ac7c05ade1}{00039}}     \textcolor{keyword}{function} \mbox{\hyperlink{class_connection_a39c9cbfd5b6472d99e5b19ac7c05ade1}{\_\_construct}}(\mbox{\hyperlink{class_connection_a5766efd703cef0e00bfc06b3f3acbe0e}{\$pdo}} = \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00040}00040     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00046}00046         \$this-\/>pdo = \mbox{\hyperlink{class_connection_a5766efd703cef0e00bfc06b3f3acbe0e}{\$pdo}};}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00047}00047         \textcolor{keywordflow}{if} (\$this-\/>pdo == \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00048}00048             \$this-\/>\mbox{\hyperlink{class_connection_a78572828d11dcdf2a498497d9001d557}{connect}}();}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00051}\mbox{\hyperlink{class_connection_a78572828d11dcdf2a498497d9001d557}{00051}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_connection_a78572828d11dcdf2a498497d9001d557}{connect}}()}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00059}00059         \textcolor{comment}{// Trys to create a connection}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00060}00060         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00061}00061             \$config = parse\_ini\_file(\textcolor{stringliteral}{"{}config.ini"{}});}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00062}00062             \textcolor{comment}{// Creates an instance of the class, sets its host, database, username and password that will be used to manage the data}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00063}00063             \$this-\/>pdo = \textcolor{keyword}{new} PDO(}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00064}00064                 \textcolor{stringliteral}{"{}mysql:host=sql302.epizy.com; "{}} . \$config[\textcolor{stringliteral}{'db'}] . \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00065}00065                 \$config[\textcolor{stringliteral}{'user'}],}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00066}00066                 \$config[\textcolor{stringliteral}{'pass'}],}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00067}00067                 array(PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}})}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00068}00068             );}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00069}00069             \textcolor{comment}{// Catch expection and print them}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00070}00070         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00071}00071             print \textcolor{stringliteral}{"{}Error!: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br/>"{}};}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00072}00072             die();}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00073}00073         \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00076}\mbox{\hyperlink{class_connection_abe175fcf658475bc56e9d6fa02bc88ec}{00076}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_connection_abe175fcf658475bc56e9d6fa02bc88ec}{disconnect}}()}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00077}00077     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00083}00083         \textcolor{comment}{// Clears the object}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00084}00084         \$this-\/>pdo = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00087}\mbox{\hyperlink{class_connection_aba804048bed81433b1331001898cd6ff}{00087}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_connection_aba804048bed81433b1331001898cd6ff}{select}}(\$sql)}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00088}00088     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00094}00094         \textcolor{comment}{// Prepares command to execute}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00095}00095         \$stmt = \$this-\/>pdo-\/>prepare(\$sql);}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00096}00096         \textcolor{comment}{// Execute}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00097}00097         \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00098}00098         \textcolor{comment}{// Return result}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00099}00099         \textcolor{keywordflow}{return} \$stmt-\/>fetchAll(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00101}\mbox{\hyperlink{class_connection_a24bba973a1b68c97d2e04175fb4a344b}{00101}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_connection_a24bba973a1b68c97d2e04175fb4a344b}{execute}}(\$sql)}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00102}00102     \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00109}00109         \textcolor{comment}{// Puts PDO in exception mode}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00110}00110         \$this-\/>pdo-\/>setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00111}00111         \textcolor{comment}{// Try to execute sql}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00112}00112         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00113}00113             \$this-\/>pdo-\/>exec(\$sql);}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00114}00114             \textcolor{comment}{// returns true if execution was successful}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00115}00115             \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00116}00116         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00117}00117             \textcolor{comment}{// otherwise returns false}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00118}00118             \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00119}00119         \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00122}00122 \}}
+\DoxyCodeLine{\Hypertarget{connection_8class_8php_source_l00123}00123 ?>}
+
+\end{DoxyCode}

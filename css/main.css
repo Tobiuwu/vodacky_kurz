@@ -1,0 +1,481 @@
+/*-----------------------------------------------------------
+  1. Main
+------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+  z-index: 99;
+  
+}
+
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+a {
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+}
+a:focus,
+a:hover {
+  color: rgba(44, 44, 44, 0.8);
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: #000000;
+  font-weight: auto;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size:25px!important;
+}
+
+.centerLodky{
+  text-align: center;
+  color:#1b76ec
+}
+:active,
+:focus {
+  outline: none !important;
+}
+
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+/*-----------------------------------------------------------
+  2. Typography
+------------------------------------------------------------*/
+
+body {
+  color: #000000;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  overflow-x: hidden;
+  transition: opacity 1s;
+  min-width: 330px;
+}
+h1,
+.h1 {
+  font-size: 4.4rem;
+  margin-bottom: 20px;
+}
+h2,
+.h2 {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  margin-bottom: 50px;
+}
+
+h3,
+.h3 {
+  font-size: 1.9rem;
+  line-height: 2.5rem;
+  margin-bottom: 15px;
+}
+h4,
+.h4 {
+  font-size: 24px;
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+  color: #00518b;
+}
+h6,
+.h6 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.about p {
+  color: #000000;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #6E757A;
+  margin-bottom: 15px;
+  letter-spacing: 0.025em;
+}
+/*-----------------------------------------------------------
+  3. Buttons
+-------------------------------------------------------------*/
+
+.more-btn {
+  text-align: center;
+  margin: 15px 0px 100px 0px;
+}
+.more-btn a {
+  font-size: 1.2rem;
+  color: #000!important;
+  cursor: pointer;
+  padding: 20px 30px;
+}
+.more-btn a:hover {
+  color: #000000!important;
+}
+
+
+.form-input {
+  display: block;
+}
+/*-----------------------------------------------------------
+  4. Header
+-------------------------------------------------------------*/
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+  font-size: 1.1rem;
+}
+.hero-btns {
+  margin-bottom: 350px;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: #00518b;
+}
+
+.navbar {
+  padding: 50px 0 0 0;
+  top: -55px;
+  left: 0;
+  height: 22%;
+  right: 0;
+  transition: all 0.7s ease 0s;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+  z-index: 99;
+}
+.navbar-light .navbar-brand {
+  margin-right: 16%;
+  margin-left: 5%;
+}
+.nav-space{
+  margin-top: 250px;
+  
+}
+.nav-item {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.nav-right{
+  float:right;
+  margin-left:55%;
+  margin-right:0%;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #00518b;
+}
+
+.video {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index:-1; 
+  object-position:center; 
+  object-fit:cover;
+}
+
+
+
+
+/*-----------------------------------------------------------
+  5. Responsive
+-------------------------------------------------------------*/
+@media (max-width: 1700px) {
+  .hero-btns {
+    margin-bottom: 200px;
+  }
+}
+@media (max-width: 1500px) {
+  .hero img {
+    margin-top: 130px;
+  }
+}
+@media (max-width: 1350px) {
+  .hero-btns {
+    margin-bottom: 140px;
+  }
+  .navbar .navbar-brand {
+    margin-right: 5%;
+  }
+}
+@media (max-width: 1199px) {
+  .nav-item {
+    padding: 0px; 
+  }
+  .nav-right{
+    margin-left: 0%;
+    margin-right: 0%;
+
+  }
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
+  .navbar .navbar-brand {
+    margin-right: 4%;
+  }
+  .contact-btn button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow:none;
+    background-color: none;
+    font-size: 1rem;
+}
+  .hero img {
+    margin-top: 150px;
+    width: 45%;
+  }
+  .hero h1 {
+    margin-top: 150px;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 3.0rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom: 20px;
+  }
+  .services p {
+    font-size: 0.8rem;
+  }
+  .hero-btns {
+    margin-bottom: 120px;
+  }
+}
+@media (max-width: 991px) {
+  .navbar {
+    padding: 15px 0 0 0;
+  }
+  .hero img {
+    display: none;
+  }
+  .hero {
+    text-align: center;
+  }
+  .hero h1 {
+    margin-top: 80px;
+  }
+  .navbar-collapse {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 2rem;
+  }
+  .contact-btn {
+    display: none;
+  }
+  .hero-btns {
+    margin-bottom: 70px;
+  }
+  .about img {
+    margin-bottom: 70px;
+  }
+  .about {
+    text-align: center;
+  }
+  .contact {
+    text-align: center;
+  }
+  .navbar-light .navbar-brand {
+    margin-right: 14%;
+    margin-left: 0%;
+    margin-top: 3%;
+  }
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  .contact-nav a {
+    font-size: 1rem;
+    padding: 20px 5px;
+  }
+  .navbar-light .navbar-brand {
+    margin-right: 14%;
+    margin-left: 0%;
+    margin-top: 4%;
+  }
+}
+
+@media (max-width: 575px) {
+  footer h3{
+    font-size: 2.5rem;
+  }
+  .navbar-light .navbar-brand {
+    margin-right: 14%;
+    margin-left: -4%;
+    margin-top: 7%;
+  }
+}
+@media (max-width: 454px) {
+  .hero h1 {
+    font-size: 3.0rem;
+    margin-top: 50px;
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  
+  .navbar-light .navbar-brand {
+    margin-right: 12%;
+    margin-left: -4%;
+    margin-top: 7%;
+  }
+  footer h3{
+    line-height: 2.6rem;
+  }
+  .contact-nav li {
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  .video {
+    width: 50%;
+  }
+  .navbar {
+    height: 35%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+
+/*-----------------------------------------------------------
+  6. Feedback
+-------------------------------------------------------------*/
+.disabled{
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.form_vodacka {
+  margin-bottom: 15%;
+  width: 100%;
+}
+.mensagem_aviso,
+.error_message,
+.mensagem_success {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+.success {
+  color: #270;
+  background-color: #DFF2BF;
+  border-color: #270; 
+}
+.mensagem_success {
+  color: #270;
+  background-color: #DFF2BF;
+  border-color: #270;
+  border-radius: 30px;
+}
+.aviso {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border-color: #9F6000;
+}
+.mensagem_aviso {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border-color: #9F6000;
+  border-radius: 30px;
+}
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border-color: #D8000C;
+}
+.error_message {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border-color: #D8000C;
+  border-radius: 30px;
+}
+.success:focus {
+    background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95% 50% #DFF2BF;
+    background-size: 25px;
+}
+.error:focus {
+    background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% #FFBABA;
+    background-size: 25px;
+}
+.aviso:focus {
+    background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% #FEEFB3;
+    background-size: 25px;
+}
+
+.hidden{
+  display:none;
+}
