@@ -37,16 +37,16 @@ class Authenticate extends Connection
 		return null;
 	}
 
-	public function IsEmpty(array $array_de_dados)
+	public function IsEmpty(array $array_data)
 	{
 		/**
 		 * Function tests whether a given array is empty or contains some empty string, used to help verify form inputs
 		 * returns true if some element in array is empty/null
 		 * @version 1.0
 		 * @since 21 Listopad 2022
-		 * @param $array_de_dados Array containing all required data
+		 * @param $array_data Array containing all required data
 		 */
-		return in_array("", $array_de_dados);
+		return in_array("", $array_data);
 	}
 
 	public function isValidNick(string $nick)
