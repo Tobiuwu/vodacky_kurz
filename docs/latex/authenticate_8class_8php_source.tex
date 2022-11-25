@@ -36,141 +36,136 @@
 \DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00037}00037         \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
 \DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00038}00038     \}}
 \DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00039}00039 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00040}00040     \textcolor{keyword}{public} \textcolor{keyword}{function} IsEmpty(array \$array\_de\_dados)}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00040}\mbox{\hyperlink{class_authenticate_a099fcf9932b0a0f4d99156d63608fb0a}{00040}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a099fcf9932b0a0f4d99156d63608fb0a}{IsEmpty}}(array \$array\_de\_dados)}
 \DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00041}00041     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00042}00042         \textcolor{comment}{// Function tests whether a given array is empty or contains some empty string, used to help verify form inputs}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00043}00043         \textcolor{comment}{// returns true if some element in array is empty/null}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00044}00044         \textcolor{keywordflow}{return} in\_array(\textcolor{stringliteral}{"{}"{}}, \$array\_de\_dados);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00045}00045     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00046}00046 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00047}00047     \textcolor{keyword}{public} \textcolor{keyword}{function} isValidNick(\textcolor{keywordtype}{string} \$nick)}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00048}00048     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00049}00049         \textcolor{comment}{// function tests whether a given string contains any invalid character, used to help verify usernames }}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00050}00050         \textcolor{comment}{// returns true if it's a valid username}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00051}00051         \textcolor{keywordflow}{return} !preg\_match(\textcolor{stringliteral}{'/[\string^A-\/Za-\/z0-\/9]/'}, \$nick) \&\& strlen(\$nick) > 1 \&\& strlen(\$nick) < 21;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00052}00052     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00053}00053 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00054}00054     \textcolor{keyword}{public} \textcolor{keyword}{function} isSwimmerTrue(\textcolor{keywordtype}{string} \$is\_swimmer)}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00055}00055     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00056}00056         \textcolor{comment}{//function that returns true if is\_swimmer is 1(checked)}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00057}00057         \textcolor{keywordflow}{return} \$is\_swimmer == \textcolor{charliteral}{'1'};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00058}00058     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00059}00059 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00060}00060     \textcolor{keyword}{public} \textcolor{keyword}{function} isValidDate(\textcolor{keywordtype}{string} \$date)}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00061}00061     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00062}00062         \textcolor{comment}{// function tests wheter a given date is valid, date should be in format YYYY-\/MM-\/DD}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00063}00063         \textcolor{comment}{// set array with day, month and year}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00064}00064         \$birth\_array = explode(\textcolor{charliteral}{'-\/'}, \$date);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00065}00065         \textcolor{comment}{// tests if array is set, countable and has only 3 elements}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00066}00066         \textcolor{keywordflow}{if} (isset(\$birth\_array) \&\& count(\$birth\_array) === 3) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00067}00067             \textcolor{comment}{// set variables}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00068}00068             \$day = \$birth\_array[2];}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00069}00069             \$month = \$birth\_array[1];}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00070}00070             \$year = \$birth\_array[0];}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00071}00071             \textcolor{comment}{// check for valid date}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00072}00072             \textcolor{keywordflow}{if} (checkdate(\$month, \$day, \$year)) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00073}00073                 \textcolor{comment}{// valid}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00074}00074                 \textcolor{keywordflow}{return} TRUE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00075}00075             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00076}00076                 \textcolor{comment}{// invalid date}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00077}00077                 \textcolor{keywordflow}{return} FALSE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00078}00078             \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00079}00079         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00080}00080             \textcolor{comment}{// array not set or invalid}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00081}00081             \textcolor{keywordflow}{return} FALSE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00082}00082         \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00083}00083     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00084}00084 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00085}00085     \textcolor{keyword}{public} \textcolor{keyword}{function} isDuplicateOrInvalidNick(\textcolor{keywordtype}{string} \$nick)}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00086}00086     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00087}00087         \textcolor{keywordflow}{if} (!\$this-\/>isValidNick(\$nick)) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00088}00088             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00089}00089         \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00090}00090         \$this-\/>type = \textcolor{stringliteral}{'CheckNick'};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00091}00091         \$this-\/>param = array(\$nick);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00092}00092         \$result = \$this-\/>Fetch();}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00093}00093 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00094}00094         \textcolor{keywordflow}{if} (isset(\$result) \&\& !empty(\$result)) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00095}00095             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00096}00096         \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00097}00097         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00098}00098     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00099}00099 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00100}00100     \textcolor{keyword}{public} \textcolor{keyword}{function} Insert()}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00101}00101     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00102}00102         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00103}00103             \textcolor{comment}{// Creates new connection}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00104}00104             \$db\_handle = \textcolor{keyword}{new} \mbox{\hyperlink{class_connection}{Connection}}();}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00105}00105             \textcolor{comment}{// Set PDO to exception mode}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00106}00106             \$db\_handle-\/>pdo-\/>setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00107}00107             \textcolor{comment}{// get insert type}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00108}00108             \textcolor{keywordflow}{switch} (\$this-\/>type) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00109}00109                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'CreateUser'}:}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00110}00110                     \$insert = \textcolor{stringliteral}{"{}INSERT INTO users VALUES(?, ?, ?, ?);"{}};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00111}00111                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00112}00112 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00113}00113                 \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00114}00114                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}Not a Valid Request"{}});}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00115}00115             \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00116}00116             \textcolor{comment}{// Prepare the query}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00117}00117             \$stmt = \$db\_handle-\/>pdo-\/>prepare(\$insert);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00118}00118             \textcolor{comment}{// execute and bind parameters}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00119}00119             \$stmt-\/>execute(\$this-\/>param);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00120}00120             \textcolor{comment}{// Disconnect}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00121}00121             \$stmt = \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00122}00122             \textcolor{keywordflow}{return} TRUE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00123}00123         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00124}00124             \textcolor{comment}{// on any error, return false}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00125}00125             \textcolor{keywordflow}{return} FALSE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00126}00126         \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00127}00127     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00128}00128 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00129}00129     \textcolor{keyword}{public} \textcolor{keyword}{function} Fetch()}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00130}00130     \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00131}00131         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00132}00132             \textcolor{comment}{// Creates new connection}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00133}00133             \$db\_handle = \textcolor{keyword}{new} \mbox{\hyperlink{class_connection}{Connection}}();}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00134}00134             \textcolor{comment}{// Set PDO to exception mode}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00135}00135             \$db\_handle-\/>pdo-\/>setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00136}00136             \textcolor{comment}{// get update type}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00137}00137             \textcolor{keywordflow}{switch} (\$this-\/>type) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00138}00138                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'GetUsers'}:}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00139}00139                     \$query = \textcolor{stringliteral}{"{}SELECT * FROM users"{}};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00140}00140                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00141}00141 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00142}00142                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'CheckNick'}:}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00143}00143                     \$query = \textcolor{stringliteral}{"{}SELECT * FROM users WHERE name = ? LIMIT 1"{}};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00144}00144                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00145}00145                 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00146}00146                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'GetWebhook'}:}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00147}00147                     \$query = \textcolor{stringliteral}{"{}SELECT * FROM webhook WHERE WebhoodId = ? LIMIT 1"{}};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00148}00148                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00149}00149 }
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00150}00150                 \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00151}00151                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}Not a Valid Request"{}});}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00152}00152             \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00153}00153             \textcolor{comment}{// Prepare the query}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00154}00154             \$stmt = \$db\_handle-\/>pdo-\/>prepare(\$query);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00155}00155             \textcolor{comment}{// execute and bind parameters}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00156}00156             \$stmt-\/>execute(\$this-\/>param);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00157}00157             \textcolor{comment}{// fetch results}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00158}00158             \$result = \$stmt-\/>fetchAll(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00159}00159             \textcolor{comment}{// Disconnect}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00160}00160             \$stmt = \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00161}00161             \textcolor{comment}{// validate db fetch returned data}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00162}00162             \textcolor{keywordflow}{if} (!empty(\$result) \&\& count(\$result)) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00163}00163                 \textcolor{comment}{// success}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00164}00164                 \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00165}00165             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00166}00166                 \textcolor{comment}{// failure}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00167}00167                 \textcolor{keywordflow}{return} FALSE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00168}00168             \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00169}00169         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00170}00170             \textcolor{comment}{// on any error, return false}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00171}00171             \textcolor{keywordflow}{return} FALSE;}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00172}00172         \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00173}00173     \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00174}00174 \}}
-\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00175}00175 ?>}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00049}00049         \textcolor{keywordflow}{return} in\_array(\textcolor{stringliteral}{"{}"{}}, \$array\_de\_dados);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00052}\mbox{\hyperlink{class_authenticate_a241a40ff2117fd4d8617983770e431b1}{00052}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a241a40ff2117fd4d8617983770e431b1}{isValidNick}}(\textcolor{keywordtype}{string} \$nick)}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00061}00061         \textcolor{comment}{// }}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00062}00062         \textcolor{keywordflow}{return} !preg\_match(\textcolor{stringliteral}{'/[\string^A-\/Za-\/z0-\/9]/'}, \$nick) \&\& strlen(\$nick) > 1 \&\& strlen(\$nick) < 21;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00065}\mbox{\hyperlink{class_authenticate_a0e60856be2c4d59b3c3ba1f84a996e29}{00065}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a0e60856be2c4d59b3c3ba1f84a996e29}{isSwimmerTrue}}(\textcolor{keywordtype}{string} \$is\_swimmer)}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00073}00073         \textcolor{keywordflow}{return} \$is\_swimmer == \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00076}\mbox{\hyperlink{class_authenticate_a4c98f41fe35b1c54a94d181e7a6ad87f}{00076}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a4c98f41fe35b1c54a94d181e7a6ad87f}{isValidDate}}(\textcolor{keywordtype}{string} \$date)}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00077}00077     \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00084}00084         \textcolor{comment}{// set array with day, month and year by exploding string into array }}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00085}00085         \$birth\_array = explode(\textcolor{charliteral}{'-\/'}, \$date);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00086}00086         \textcolor{comment}{// tests if array is set, countable and has only 3 elements}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00087}00087         \textcolor{keywordflow}{if} (isset(\$birth\_array) \&\& count(\$birth\_array) === 3) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00088}00088             \textcolor{comment}{// set variables}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00089}00089             \$day = \$birth\_array[2];}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00090}00090             \$month = \$birth\_array[1];}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00091}00091             \$year = \$birth\_array[0];}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00092}00092             \textcolor{comment}{// check for valid date}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00093}00093             \textcolor{keywordflow}{if} (checkdate(\$month, \$day, \$year)) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00094}00094                 \textcolor{comment}{// valid}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00095}00095                 \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00096}00096             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00097}00097                 \textcolor{comment}{// invalid date}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00098}00098                 \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00099}00099             \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00100}00100         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00101}00101             \textcolor{comment}{// array not set or invalid}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00102}00102             \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00103}00103         \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00106}\mbox{\hyperlink{class_authenticate_a8431a2702f079410ed6beaec7289172a}{00106}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a8431a2702f079410ed6beaec7289172a}{isDuplicateOrInvalidNick}}(\textcolor{keywordtype}{string} \$nick)}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00107}00107     \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00114}00114         \textcolor{keywordflow}{if} (!\$this-\/>\mbox{\hyperlink{class_authenticate_a241a40ff2117fd4d8617983770e431b1}{isValidNick}}(\$nick)) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00115}00115             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00116}00116         \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00117}00117         \$this-\/>type = \textcolor{stringliteral}{'CheckNick'};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00118}00118         \$this-\/>param = array(\$nick);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00119}00119         \$result = \$this-\/>\mbox{\hyperlink{class_authenticate_a79bd0a4df5406e530e88fc30a6ea3302}{Fetch}}();}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00121}00121         \textcolor{keywordflow}{if} (isset(\$result) \&\& !empty(\$result)) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00122}00122             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00123}00123         \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00124}00124         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00127}\mbox{\hyperlink{class_authenticate_a7411497a959805a3b65916155a6f065a}{00127}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a7411497a959805a3b65916155a6f065a}{Insert}}()}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00128}00128     \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00136}00136         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00137}00137             \textcolor{comment}{// Creates new connection}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00138}00138             \$db\_handle = \textcolor{keyword}{new} \mbox{\hyperlink{class_connection}{Connection}}();}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00139}00139             \textcolor{comment}{// Set PDO to exception mode}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00140}00140             \$db\_handle-\/>pdo-\/>setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00141}00141             \textcolor{comment}{// get insert type}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00142}00142             \textcolor{keywordflow}{switch} (\$this-\/>type) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00143}00143                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'CreateUser'}:}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00144}00144                     \$insert = \textcolor{stringliteral}{"{}INSERT INTO users VALUES(?, ?, ?, ?);"{}};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00145}00145                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00147}00147                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00148}00148                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}Not a Valid Request"{}});}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00149}00149             \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00150}00150             \textcolor{comment}{// Prepare the query}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00151}00151             \$stmt = \$db\_handle-\/>pdo-\/>prepare(\$insert);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00152}00152             \textcolor{comment}{// execute and bind parameters}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00153}00153             \$stmt-\/>execute(\$this-\/>param);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00154}00154             \textcolor{comment}{// Disconnect}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00155}00155             \$stmt = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00156}00156             \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00157}00157         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00158}00158             \textcolor{comment}{// on any error, return false}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00159}00159             \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00160}00160         \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00161}00161     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00163}\mbox{\hyperlink{class_authenticate_a79bd0a4df5406e530e88fc30a6ea3302}{00163}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_authenticate_a79bd0a4df5406e530e88fc30a6ea3302}{Fetch}}()}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00164}00164     \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00172}00172         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00173}00173             \textcolor{comment}{// Creates new connection}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00174}00174             \$db\_handle = \textcolor{keyword}{new} \mbox{\hyperlink{class_connection}{Connection}}();}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00175}00175             \textcolor{comment}{// Set PDO to exception mode}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00176}00176             \$db\_handle-\/>pdo-\/>setAttribute(PDO::ATTR\_ERRMODE, PDO::ERRMODE\_EXCEPTION);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00177}00177             \textcolor{comment}{// get update type}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00178}00178             \textcolor{keywordflow}{switch} (\$this-\/>type) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00179}00179                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'GetUsers'}:}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00180}00180                     \$query = \textcolor{stringliteral}{"{}SELECT * FROM users"{}};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00181}00181                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00183}00183                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'CheckNick'}:}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00184}00184                     \$query = \textcolor{stringliteral}{"{}SELECT * FROM users WHERE name = ? LIMIT 1"{}};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00185}00185                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00186}00186                 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00187}00187                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{'GetWebhook'}:}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00188}00188                     \$query = \textcolor{stringliteral}{"{}SELECT * FROM webhook WHERE WebhoodId = ? LIMIT 1"{}};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00189}00189                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00191}00191                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00192}00192                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}Not a Valid Request"{}});}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00193}00193             \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00194}00194             \textcolor{comment}{// Prepare the query}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00195}00195             \$stmt = \$db\_handle-\/>pdo-\/>prepare(\$query);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00196}00196             \textcolor{comment}{// execute and bind parameters}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00197}00197             \$stmt-\/>execute(\$this-\/>param);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00198}00198             \textcolor{comment}{// fetch results}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00199}00199             \$result = \$stmt-\/>fetchAll(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00200}00200             \textcolor{comment}{// Disconnect}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00201}00201             \$stmt = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00202}00202             \textcolor{comment}{// validate db fetch returned data}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00203}00203             \textcolor{keywordflow}{if} (!empty(\$result) \&\& count(\$result)) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00204}00204                 \textcolor{comment}{// success}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00205}00205                 \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00206}00206             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00207}00207                 \textcolor{comment}{// failure}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00208}00208                 \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00209}00209             \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00210}00210         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00211}00211             \textcolor{comment}{// on any error, return false}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00212}00212             \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00213}00213         \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00214}00214     \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00215}00215 \}}
+\DoxyCodeLine{\Hypertarget{authenticate_8class_8php_source_l00216}00216 ?>}
 
 \end{DoxyCode}

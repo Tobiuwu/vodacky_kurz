@@ -91,9 +91,22 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00019}{19}}
 \doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}}
 {\footnotesize\ttfamily Fetch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+function Fetchs data from database based on Type parameter \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$this-\/$>$type} & Parameter must contain one of the already defined type on switch\+: Get\+Users, Check\+Nick, Get\+Webhook \\
+\hline
+{\em \$this-\/$>$param} & Array containing all data required for SELECT\\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00129}{129}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
+Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00163}{163}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
 
 \mbox{\Hypertarget{class_authenticate_a7411497a959805a3b65916155a6f065a}\label{class_authenticate_a7411497a959805a3b65916155a6f065a}} 
 \index{Authenticate@{Authenticate}!Insert@{Insert}}
@@ -101,9 +114,22 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00129}{129}
 \doxysubsubsection{\texorpdfstring{Insert()}{Insert()}}
 {\footnotesize\ttfamily Insert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+function Insert data in database based on Type parameter \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$this-\/$>$type} & Parameter must contain one of the already defined type on switch\+: Create\+User \\
+\hline
+{\em \$this-\/$>$param} & Array containing all data required for INSERT\\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00100}{100}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
+Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00127}{127}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
 
 \mbox{\Hypertarget{class_authenticate_a8431a2702f079410ed6beaec7289172a}\label{class_authenticate_a8431a2702f079410ed6beaec7289172a}} 
 \index{Authenticate@{Authenticate}!isDuplicateOrInvalidNick@{isDuplicateOrInvalidNick}}
@@ -111,9 +137,20 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00100}{100}
 \doxysubsubsection{\texorpdfstring{isDuplicateOrInvalidNick()}{isDuplicateOrInvalidNick()}}
 {\footnotesize\ttfamily is\+Duplicate\+Or\+Invalid\+Nick (\begin{DoxyParamCaption}\item[{string}]{\$nick }\end{DoxyParamCaption})}
 
+function check is given nickname is duplicate on invalid \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$nick} & Nickname to be validated\\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00085}{85}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
+Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00106}{106}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
 
 \mbox{\Hypertarget{class_authenticate_a099fcf9932b0a0f4d99156d63608fb0a}\label{class_authenticate_a099fcf9932b0a0f4d99156d63608fb0a}} 
 \index{Authenticate@{Authenticate}!IsEmpty@{IsEmpty}}
@@ -121,6 +158,17 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00085}{85}}
 \doxysubsubsection{\texorpdfstring{IsEmpty()}{IsEmpty()}}
 {\footnotesize\ttfamily Is\+Empty (\begin{DoxyParamCaption}\item[{array}]{\$array\+\_\+de\+\_\+dados }\end{DoxyParamCaption})}
 
+Function tests whether a given array is empty or contains some empty string, used to help verify form inputs returns true if some element in array is empty/null \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$array\+\_\+de\+\_\+dados} & Array containing all required data\\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00040}{40}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
@@ -131,9 +179,20 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00040}{40}}
 \doxysubsubsection{\texorpdfstring{isSwimmerTrue()}{isSwimmerTrue()}}
 {\footnotesize\ttfamily is\+Swimmer\+True (\begin{DoxyParamCaption}\item[{string}]{\$is\+\_\+swimmer }\end{DoxyParamCaption})}
 
+function that returns true if is\+\_\+swimmer is 1(checked) \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$is\+\_\+swimmer} & Checkbox correspondent parameter that should be 1 if checkbox is marked\\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00054}{54}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
+Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00065}{65}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
 
 \mbox{\Hypertarget{class_authenticate_a4c98f41fe35b1c54a94d181e7a6ad87f}\label{class_authenticate_a4c98f41fe35b1c54a94d181e7a6ad87f}} 
 \index{Authenticate@{Authenticate}!isValidDate@{isValidDate}}
@@ -141,9 +200,20 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00054}{54}}
 \doxysubsubsection{\texorpdfstring{isValidDate()}{isValidDate()}}
 {\footnotesize\ttfamily is\+Valid\+Date (\begin{DoxyParamCaption}\item[{string}]{\$date }\end{DoxyParamCaption})}
 
+function tests wheter a given date is valid, \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$date} & string containing the date, should be in format YYYY-\/\+MM-\/\+DD\\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00060}{60}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
+Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00076}{76}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
 
 \mbox{\Hypertarget{class_authenticate_a241a40ff2117fd4d8617983770e431b1}\label{class_authenticate_a241a40ff2117fd4d8617983770e431b1}} 
 \index{Authenticate@{Authenticate}!isValidNick@{isValidNick}}
@@ -151,9 +221,20 @@ Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00060}{60}}
 \doxysubsubsection{\texorpdfstring{isValidNick()}{isValidNick()}}
 {\footnotesize\ttfamily is\+Valid\+Nick (\begin{DoxyParamCaption}\item[{string}]{\$nick }\end{DoxyParamCaption})}
 
+function tests whether a given string contains any invalid character, used to help verify usernames returns true if it\textquotesingle{}s a valid username \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+21 Listopad 2022 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em \$nick} & Nickname to be validated\\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00047}{47}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
+Definition at line \mbox{\hyperlink{authenticate_8class_8php_source_l00052}{52}} of file \mbox{\hyperlink{authenticate_8class_8php_source}{authenticate.\+class.\+php}}.
 
 
 
